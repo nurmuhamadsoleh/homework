@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Apr 2021 pada 17.54
--- Versi server: 10.4.17-MariaDB
--- Versi PHP: 7.4.13
+-- Generation Time: Apr 04, 2021 at 05:47 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `classes`
+-- Table structure for table `classes`
 --
 
 CREATE TABLE `classes` (
@@ -41,7 +41,7 @@ CREATE TABLE `classes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `classes`
+-- Dumping data for table `classes`
 --
 
 INSERT INTO `classes` (`id`, `name`, `code`, `date_start`, `date_end`, `description`, `photo`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `classes` (`id`, `name`, `code`, `date_start`, `date_end`, `descript
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `join_classes`
+-- Table structure for table `join_classes`
 --
 
 CREATE TABLE `join_classes` (
@@ -66,7 +66,7 @@ CREATE TABLE `join_classes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `join_classes`
+-- Dumping data for table `join_classes`
 --
 
 INSERT INTO `join_classes` (`id`, `class_id`, `users_id`, `role`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `join_classes` (`id`, `class_id`, `users_id`, `role`, `createdAt`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `materials`
+-- Table structure for table `materials`
 --
 
 CREATE TABLE `materials` (
@@ -92,7 +92,7 @@ CREATE TABLE `materials` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `materials`
+-- Dumping data for table `materials`
 --
 
 INSERT INTO `materials` (`id`, `schedule_id`, `name`, `file`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
@@ -104,7 +104,7 @@ INSERT INTO `materials` (`id`, `schedule_id`, `name`, `file`, `createdAt`, `upda
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `presences`
+-- Table structure for table `presences`
 --
 
 CREATE TABLE `presences` (
@@ -117,7 +117,7 @@ CREATE TABLE `presences` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `presences`
+-- Dumping data for table `presences`
 --
 
 INSERT INTO `presences` (`join_class_id`, `schedule_id`, `created_at`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
@@ -127,7 +127,7 @@ INSERT INTO `presences` (`join_class_id`, `schedule_id`, `created_at`, `createdA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `schedules`
+-- Table structure for table `schedules`
 --
 
 CREATE TABLE `schedules` (
@@ -143,7 +143,7 @@ CREATE TABLE `schedules` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `schedules`
+-- Dumping data for table `schedules`
 --
 
 INSERT INTO `schedules` (`id`, `class_id`, `name`, `code`, `start`, `end`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
@@ -153,7 +153,7 @@ INSERT INTO `schedules` (`id`, `class_id`, `name`, `code`, `start`, `end`, `crea
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sequelizemeta`
+-- Table structure for table `sequelizemeta`
 --
 
 CREATE TABLE `sequelizemeta` (
@@ -161,7 +161,7 @@ CREATE TABLE `sequelizemeta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `sequelizemeta`
+-- Dumping data for table `sequelizemeta`
 --
 
 INSERT INTO `sequelizemeta` (`name`) VALUES
@@ -175,7 +175,7 @@ INSERT INTO `sequelizemeta` (`name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -196,51 +196,52 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `place_birth`, `birthdate`, `email`, `password`, `phone`, `last_study`, `institution`, `current_job`, `sosmed`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
 ('33cba63c-c2e7-4051-90c8-abde1707fd3b', 'Alexa', 'Jakarta', '1991-12-09', 'alexa@gmail.com', '$2b$08$m9aGpPZwYjGzqryxv9DKCO3bfQrnVW3ZUYSkaVRcZqbr.tWDYb22S', '(083)161-162', 'SMA', 'SMA TARAKANITA', 'student', NULL, '2021-04-03 13:43:45', '2021-04-03 13:43:45', NULL),
 ('5c995c6d-e6e5-44f8-bfdd-b6455197cbfa', 'Ghany Abdillah Ersa', 'Jakarta', '0000-00-00', 'ghanyersa24@gmail.com', '$2b$08$WMCXSIyTPXha638nh6UkPONTYdT5b6xWDGhMCwTimdCc0tLUBvZGK', '082164028264', NULL, NULL, NULL, NULL, '2021-04-04 07:34:52', '2021-04-04 07:34:52', NULL),
-('6e28eded-8270-46e6-a96c-e1656d6cffc2', 'Ghany Abdillah', 'Jakarta', '0000-00-00', 'ghanyersa25@gmail.com', '$2b$08$vn6C/qwhE.9BAB9znuhe9OPWxIBqDdpmpXYHFwGsCx3pSyGmj1Jvm', '082164028265', NULL, NULL, NULL, NULL, '2021-04-04 07:35:47', '2021-04-04 07:35:47', '2021-04-04 07:39:28');
+('6e28eded-8270-46e6-a96c-e1656d6cffc2', 'Ghany Abdillah', 'Jakarta', '0000-00-00', 'ghanyersa25@gmail.com', '$2b$08$vn6C/qwhE.9BAB9znuhe9OPWxIBqDdpmpXYHFwGsCx3pSyGmj1Jvm', '082164028265', NULL, NULL, NULL, NULL, '2021-04-04 07:35:47', '2021-04-04 07:35:47', '2021-04-04 07:39:28'),
+('d7931618-d1d9-4b3b-9e2a-a6f0a79fe6e7', 'Irfan Prasetyo', 'Jakarta', '1991-11-23', 'ghanyersa25@gmail.com', '$2b$08$fyx7lJhIHk.JWwOHuc5BFuAxGIa2crePbtGG/rKX3dHj3.k11wZWi', '082164028265', 'SMA', NULL, 'Student', 'fb', '2021-04-04 07:41:20', '2021-04-04 09:16:02', NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `classes`
+-- Indexes for table `classes`
 --
 ALTER TABLE `classes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `join_classes`
+-- Indexes for table `join_classes`
 --
 ALTER TABLE `join_classes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `materials`
+-- Indexes for table `materials`
 --
 ALTER TABLE `materials`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `schedules`
+-- Indexes for table `schedules`
 --
 ALTER TABLE `schedules`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `sequelizemeta`
+-- Indexes for table `sequelizemeta`
 --
 ALTER TABLE `sequelizemeta`
   ADD PRIMARY KEY (`name`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
